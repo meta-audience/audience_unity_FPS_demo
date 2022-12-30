@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1179691171370479959}
   - component: {fileID: 4267632436036420154}
-  - component: {fileID: 5362197432312353427}
   m_Layer: 0
   m_Name: WeaponCamera
   m_TagString: Untagged
@@ -76,39 +75,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &5362197432312353427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73291243372701838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 1
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1 &99084338444284975
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,8 +433,6 @@ GameObject:
   - component: {fileID: 3271114149345892190}
   - component: {fileID: 3271114149345892188}
   - component: {fileID: 3271114149345892169}
-  - component: {fileID: 3271114149345892165}
-  - component: {fileID: 3271114149345892167}
   - component: {fileID: 3271114149349364100}
   - component: {fileID: 3271114149349364101}
   - component: {fileID: 3271114149349364106}
@@ -1267,87 +1231,7 @@ MonoBehaviour:
   headLookWeight: 0.207
   gunHoldOffset: {x: 0, y: 0, z: 0}
   leftHandOffset: {x: 0, y: 0, z: 0}
-  recoil: {fileID: 3271114149345892165}
---- !u!114 &3271114149345892165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3271114149339881986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c613189034e145e5abecee53af1ce0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 0.82
-  ik: {fileID: 3271114149345892163}
-  aimIK: {fileID: 3271114149345892161}
-  aimIKSolvedLast: 0
-  handedness: 0
-  twoHanded: 1
-  recoilWeight:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.00026988983
-      inSlope: 37.68351
-      outSlope: 37.68351
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.033218965
-      value: 1.0040972
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.21876264
-      value: 0.00026988983
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  magnitudeRandom: 0.1
-  rotationRandom: {x: 0, y: 30, z: 0}
-  handRotationOffset: {x: 0, y: 7, z: 0}
-  blendTime: 0.1
-  offsets:
-  - offset: {x: 0.02, y: 0, z: -0.1}
-    additivity: 0.5
-    maxAdditiveOffsetMag: 0.2
-    effectorLinks:
-    - effector: 6
-      weight: 1
-    - effector: 2
-      weight: 0.3
-    - effector: 0
-      weight: 0.1
-  rotationOffset: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &3271114149345892167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3271114149339881986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e57aceae1698147d69f2012c0956d475, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitude: 1
+  recoil: {fileID: 0}
 --- !u!114 &3271114149349364100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19770,8 +19654,6 @@ GameObject:
   - component: {fileID: 6640441582852270302}
   - component: {fileID: 6321608351365923108}
   - component: {fileID: 2630205964761040267}
-  - component: {fileID: 200706314094002925}
-  - component: {fileID: 4686204861756457397}
   - component: {fileID: 6640441582852270297}
   m_Layer: 0
   m_Name: Main Camera
@@ -19847,57 +19729,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4884801248580006306}
   m_Enabled: 1
---- !u!114 &200706314094002925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4884801248580006306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras:
-  - {fileID: 4267632436036420154}
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 1
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
---- !u!114 &4686204861756457397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4884801248580006306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: df837a1f5737d5a489993708ca80ccc9, type: 2}
 --- !u!114 &6640441582852270297
 MonoBehaviour:
   m_ObjectHideFlags: 0
