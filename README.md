@@ -1,8 +1,6 @@
 # unity_FPS_Demo
 
 ## Project Settings
-- Please import the `FloorGameObj.unitypackage` first.
-- ![](https://i.imgur.com/ev3os0r.jpg)
 - Drag `IntroMenu, TestScene, LoseScene, WinScene` to the Hierachy windows
     - Scenes Path is: `Assets/_audienceDemo/DemoScene`
 - Unload the scenes, expect IntroMenu
