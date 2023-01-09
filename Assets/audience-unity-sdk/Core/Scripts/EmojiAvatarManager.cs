@@ -201,9 +201,9 @@ namespace AudienceSDK {
             } else if (avatarAuthors.Count == 1) {
                 if (this._emojiAvatarPrefabList.ContainsKey(avatarSingleKey) && this._emojiAvatarPrefabList[avatarSingleKey] != null) {
                     var avatarObject = Instantiate(this._emojiAvatarPrefabList[avatarSingleKey]);
-                    avatarObject.transform.position = avatarPositon;
-                    avatarObject.transform.LookAt(mainCamera.transform);
                     avatarObject.transform.SetParent(_avatarGenerateCollidersObjRoot.transform);
+                    avatarObject.transform.LookAt(mainCamera.transform);
+                    avatarObject.transform.localPosition = avatarPositon;
                     var avatarCollider = avatarObject.AddComponent<SphereCollider>();
                     avatarCollider.radius = this._avatarColliderRadius;
                     var avatarBehavior = avatarObject.AddComponent<EmojiAvatarSingleAuthorBehaviour>();
@@ -257,7 +257,7 @@ namespace AudienceSDK {
                     UnityEngine.Random.Range(-extents.y, extents.y),
                     UnityEngine.Random.Range(-extents.z, extents.z)
                     );
-                Vector3 generatepoint = randomColliderInList.transform.position + randomPoint;
+                Vector3 generatepoint = randomPoint;
                 Debug.Log("generated 003 randomPoint: " + generatepoint);
                 avatarPos = generatepoint;
                 
@@ -267,7 +267,7 @@ namespace AudienceSDK {
                     return AudienceReturnCode.AudienceSDKOk;
 
                 }
-
+                return AudienceReturnCode.AudienceSDKOk;
             }
 
             if (this._avatarList != null && this._avatarList.Count > 0) {
