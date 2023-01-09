@@ -378,6 +378,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: ===== PLAYER =====
       objectReference: {fileID: 0}
+    - target: {fileID: 3271114149345892161, guid: e277a57d36dbc824eaf9fbdfeefeae9e,
+        type: 3}
+      propertyPath: solver.IKPosition.x
+      value: 1.4238553
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271114149345892161, guid: e277a57d36dbc824eaf9fbdfeefeae9e,
+        type: 3}
+      propertyPath: solver.IKPosition.y
+      value: 4.2640133
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271114149345892161, guid: e277a57d36dbc824eaf9fbdfeefeae9e,
+        type: 3}
+      propertyPath: solver.IKPosition.z
+      value: 0.5817529
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271114149345892161, guid: e277a57d36dbc824eaf9fbdfeefeae9e,
+        type: 3}
+      propertyPath: solver.polePosition.x
+      value: 0.35152933
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271114149345892161, guid: e277a57d36dbc824eaf9fbdfeefeae9e,
+        type: 3}
+      propertyPath: solver.polePosition.y
+      value: 0.9810206
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271114149345892161, guid: e277a57d36dbc824eaf9fbdfeefeae9e,
+        type: 3}
+      propertyPath: solver.polePosition.z
+      value: 3.0459137
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271114149345892161, guid: e277a57d36dbc824eaf9fbdfeefeae9e,
+        type: 3}
+      propertyPath: solver.useRotationLimits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271114149345892163, guid: e277a57d36dbc824eaf9fbdfeefeae9e,
+        type: 3}
+      propertyPath: fixTransforms
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e277a57d36dbc824eaf9fbdfeefeae9e, type: 3}
 --- !u!1 &2729281212887052390

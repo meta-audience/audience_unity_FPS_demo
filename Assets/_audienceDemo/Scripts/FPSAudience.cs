@@ -65,7 +65,7 @@ namespace AudienceSDK.Sample
             CameraUtilities.PostCreateCamera = PostCreateCameraFunc;
             AudienceSDK.Audience.Initialize();
             //init in menu, make generate area under this gameObj
-            AudienceSDK.Audience.Context.EmojiAvatarManager.InitiateAvatarGenerateArea(AvatarGenrateAreasGroupRootPrefab, null);
+            //AudienceSDK.Audience.Context.EmojiAvatarManager.InitiateAvatarGenerateArea(AvatarGenrateAreasGroupRootPrefab, null);
             UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
             this.AudienceInited = true;
         }

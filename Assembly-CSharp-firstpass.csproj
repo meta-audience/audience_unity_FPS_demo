@@ -944,6 +944,10 @@
       <Project>{E18DEBC4-C748-F36F-6254-CE194E7390C8}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="AudienceSDK-Assembly.csproj">
+      <Project>{ACEE65ED-24C9-7B6E-291D-2B3A13DB6B20}</Project>
+      <Name>AudienceSDK-Assembly</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.csproj">
       <Project>{A18B8DE5-03FD-65C0-AD64-0B8ABD7F189D}</Project>
       <Name>Unity.TestTools.CodeCoverage.Editor</Name>
@@ -951,10 +955,6 @@
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{90D548C2-6296-3F62-4A8B-9B3AF2E6FDBF}</Project>
       <Name>Unity.VisualScripting.State</Name>
-    </ProjectReference>
-    <ProjectReference Include="AudienceSDK-Assembly.csproj">
-      <Project>{ACEE65ED-24C9-7B6E-291D-2B3A13DB6B20}</Project>
-      <Name>AudienceSDK-Assembly</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

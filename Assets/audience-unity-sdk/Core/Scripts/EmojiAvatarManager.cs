@@ -203,9 +203,10 @@ namespace AudienceSDK {
                     var avatarObject = Instantiate(this._emojiAvatarPrefabList[avatarSingleKey]);
                     avatarObject.transform.SetParent(_avatarGenerateCollidersObjRoot.transform);
                     avatarObject.transform.LookAt(mainCamera.transform);
-                    avatarObject.transform.localPosition = avatarPositon;
-                    var avatarCollider = avatarObject.AddComponent<SphereCollider>();
-                    avatarCollider.radius = this._avatarColliderRadius;
+                    avatarObject.transform.position = avatarPositon;
+                    //var avatarCollider = avatarObject.AddComponent<SphereCollider>();
+
+                    //avatarCollider.radius = this._avatarColliderRadius;
                     var avatarBehavior = avatarObject.AddComponent<EmojiAvatarSingleAuthorBehaviour>();
                     avatarBehavior.OnAvatarFinished += this.HandleAvatarFinished;
                     rc = avatarBehavior.SetAuthors(avatarAuthors);
@@ -243,11 +244,9 @@ namespace AudienceSDK {
 
         private AudienceReturnCode GenerateAvatarPosition(ref Vector3 avatarPos) {
 
-            Debug.Log("generated 001 ");
             for (int i = 0; i < this._avatarColliderRetryTimes; ++i)
             {
                 int randomListIndex = UnityEngine.Random.Range(0, _avatarGenerateColliders.Count - 1);
-                Debug.Log("generated 002 randomListIndex: " + randomListIndex);
                 var randomColliderInList = _avatarGenerateColliders[randomListIndex];
 
                 Vector3 extents = randomColliderInList.bounds.size / 2f;
@@ -258,18 +257,17 @@ namespace AudienceSDK {
                     UnityEngine.Random.Range(-extents.z, extents.z)
                     );
                 Vector3 generatepoint = randomPoint;
-                Debug.Log("generated 003 randomPoint: " + generatepoint);
-                avatarPos = generatepoint;
-                
-                if (randomColliderInList.bounds.Contains(generatepoint))
+
+                avatarPos = randomColliderInList.transform.position + generatepoint;
+
+                if (randomColliderInList.bounds.Contains(avatarPos))
                 {
                     Debug.Log("generated 004 Contains: ");
                     return AudienceReturnCode.AudienceSDKOk;
-
                 }
-                return AudienceReturnCode.AudienceSDKOk;
+ 
             }
-
+            Debug.Log("generated 005 notc ontains: ");
             if (this._avatarList != null && this._avatarList.Count > 0) {
                 Debug.Log("GenerateAvatarPosition, retry too many times, use the oldest avatar position.");
                 var oldestAvatar = this._avatarList.First.Value;
