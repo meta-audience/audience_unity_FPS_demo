@@ -966,13 +966,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixTransforms: 1
   solver:
-    IKPosition: {x: 1.4238565, y: 4.163014, z: 0.581754}
+    IKPosition: {x: 1.4238553, y: 4.2640133, z: 0.5817529}
     IKPositionWeight: 1
     root: {fileID: 3271114149340380706}
     target: {fileID: 0}
     tolerance: 0
     maxIterations: 4
-    useRotationLimits: 1
+    useRotationLimits: 0
     XY: 0
     bones:
     - transform: {fileID: 3271114149340381090}
@@ -1034,7 +1034,7 @@ MonoBehaviour:
     transform: {fileID: 7402156124015377361}
     axis: {x: 0, y: -1, z: 0}
     poleAxis: {x: 0, y: 0, z: 1}
-    polePosition: {x: 0.35152757, y: 0.88002, z: 3.0459135}
+    polePosition: {x: 0.35152933, y: 0.9810206, z: 3.0459137}
     poleWeight: 0
     poleTarget: {fileID: 0}
     clampWeight: 0.1

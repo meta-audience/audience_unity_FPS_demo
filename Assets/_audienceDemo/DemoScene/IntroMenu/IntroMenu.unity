@@ -1207,7 +1207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ViewerCameraPivot: {fileID: 5877914141483902651}
-  AvatarGenrateAreasGroupRootPrefab: {fileID: 0}
   PlayerTag: PlayerRoot
   PlayerSceneName: TestScene
 --- !u!1 &1833309139

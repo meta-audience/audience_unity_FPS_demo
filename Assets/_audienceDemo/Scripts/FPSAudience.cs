@@ -12,8 +12,8 @@ namespace AudienceSDK.Sample
         // Developer Custom Assign
         [Tooltip("audience Viewer Camera will continually trace this pivot position.")]
         public GameObject ViewerCameraPivot;
-        [Tooltip("Colliders with trigger on, use to generate avatar.")]
-        public Transform AvatarGenrateAreasGroupRootPrefab;
+        //[Tooltip("Colliders with trigger on, use to generate avatar.")]
+        //public Transform AvatarGenrateAreasGroupRootPrefab;
         [Tooltip("Make gernerated avatar look at this position, suppose avatar appear in streamer view.")]
         public string PlayerTag;
         public string PlayerSceneName;
