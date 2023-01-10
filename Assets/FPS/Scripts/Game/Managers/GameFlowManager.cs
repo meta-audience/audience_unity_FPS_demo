@@ -82,6 +82,7 @@ namespace Unity.FPS.Game
 
             // Remember that we need to load the appropriate end scene after a delay
             GameIsEnding = true;
+            AudienceSDK.Sample.FPSAudience.instance.OnSceneUnloaded();
             EndGameFadeCanvasGroup.gameObject.SetActive(true);
             if (win)
             {
