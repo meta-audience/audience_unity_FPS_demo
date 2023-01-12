@@ -202,8 +202,8 @@ namespace AudienceSDK {
                 if (this._emojiAvatarPrefabList.ContainsKey(avatarSingleKey) && this._emojiAvatarPrefabList[avatarSingleKey] != null) {
                     var avatarObject = Instantiate(this._emojiAvatarPrefabList[avatarSingleKey]);
                     avatarObject.transform.SetParent(_avatarGenerateCollidersObjRoot.transform);
-                    avatarObject.transform.LookAt(mainCamera.transform);
                     avatarObject.transform.position = avatarPositon;
+                    avatarObject.transform.LookAt(mainCamera.transform);
                     //var avatarCollider = avatarObject.AddComponent<SphereCollider>();
 
                     //avatarCollider.radius = this._avatarColliderRadius;
@@ -246,7 +246,7 @@ namespace AudienceSDK {
 
             for (int i = 0; i < this._avatarColliderRetryTimes; ++i)
             {
-                int randomListIndex = UnityEngine.Random.Range(0, _avatarGenerateColliders.Count - 1);
+                int randomListIndex = UnityEngine.Random.Range(0, _avatarGenerateColliders.Count);
                 var randomColliderInList = _avatarGenerateColliders[randomListIndex];
 
                 Vector3 extents = randomColliderInList.bounds.size / 2f;
