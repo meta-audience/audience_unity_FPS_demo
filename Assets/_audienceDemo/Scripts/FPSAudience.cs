@@ -5,8 +5,6 @@ namespace AudienceSDK.Sample
 {
     public class FPSAudience : MonoBehaviour
     {
-        public Action<bool> onAudienceInitStateChanged;
-
         public static FPSAudience instance = null;
 
         public static FPSAudience Instance
