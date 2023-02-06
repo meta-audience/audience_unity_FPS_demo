@@ -32,7 +32,6 @@ namespace AudienceSDK.Sample
 
         private void Update()
         {
-            this.ThirdPersonPos = FPSAudience.instance.ViewerCameraPivot.transform.position;
         }
     }
 }
