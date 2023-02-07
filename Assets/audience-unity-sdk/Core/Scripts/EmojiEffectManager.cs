@@ -17,6 +17,12 @@ namespace AudienceSDK {
         private List<EmojiInteractUnit> _interactList;
         private List<EmojiBehaviourBase> _emojiList;
         private bool _isEmojiProcessing = false;
+        private bool _isEmojiAttachEmojiSpawner = false;
+
+        public AudienceReturnCode SetIsEmojiAttachEmojiSpawner(bool value) {
+            this._isEmojiAttachEmojiSpawner = value;
+            return AudienceReturnCode.AudienceSDKOk;
+        }
 
         public AudienceReturnCode CreateEmoji(ChatAuthor author, EmojiMessage message) {
             EmojiAvatarBehaviourBase avatar = null;
@@ -69,13 +75,10 @@ namespace AudienceSDK {
                 var fittedObj = message.asset_list.Find(x => x.engine == "Unity" && x.render_type == XRSettings.stereoRenderingMode.ToString());
                 if (fittedObj != null) {
                     emojiAsset = fittedObj.asset;
-                }
-                else
-                {
+                } else {
                     // if can't find correct render_type, just find correct engine.
                     fittedObj = message.asset_list.Find(x => x.engine == "Unity");
-                    if (fittedObj != null)
-                    {
+                    if (fittedObj != null) {
                         emojiAsset = fittedObj.asset;
                     }
                 }
@@ -92,13 +95,10 @@ namespace AudienceSDK {
                     message.animation.asset_list.Find(x => x.engine == "Unity" && x.render_type == XRSettings.stereoRenderingMode.ToString());
             if (fittedAnimaObj != null) {
                 emojiAnimationAsset = fittedAnimaObj.asset;
-            }
-            else
-            {
+            } else {
                 // if can't find correct render_type, just find correct engine.
                 fittedAnimaObj = message.animation.asset_list.Find(x => x.engine == "Unity");
-                if (fittedAnimaObj != null)
-                {
+                if (fittedAnimaObj != null) {
                     emojiAnimationAsset = fittedAnimaObj.asset;
                 }
             }
@@ -155,10 +155,20 @@ namespace AudienceSDK {
             where T : EmojiBehaviourBase {
             GameObject go = new GameObject();
             T eBehaviour = go.AddComponent<T>();
-            go.transform.SetParent(avatar.transform);
-            go.transform.localEulerAngles = Vector3.zero;
-            go.transform.localPosition = Vector3.zero;
-            go.transform.SetParent(null);
+            go.transform.SetParent(avatar.transform, false);
+
+            // this.transform or EmojiAvatarsRoot is don't destroy, emoji won't destroy when scene unloaded.
+            if (this._isEmojiAttachEmojiSpawner) {
+                if (Audience.Context.EmojiAvatarManager.EmojiAvatarsRoot != null) {
+                    go.transform.SetParent(Audience.Context.EmojiAvatarManager.EmojiAvatarsRoot.transform);
+                } else {
+                    Debug.LogWarning("EmojiAvatarsRoot should exist, check EmojiAvatarManager is inited.");
+                    go.transform.SetParent(this.transform);
+                }
+            } else {
+                go.transform.SetParent(this.transform);
+            }
+            
             return eBehaviour;
         }
 

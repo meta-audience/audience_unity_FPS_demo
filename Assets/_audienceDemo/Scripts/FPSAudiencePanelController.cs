@@ -19,17 +19,16 @@ namespace AudienceSDK.Sample
                 return;
             }
 
-            if (FPSAudience.Instance.AudienceInited) {
+            if (AudienceSDK.Audience.AudienceInited) {
                 this.InitPanelController();
             }
 
-            FPSAudience.Instance.onAudienceInitStateChanged += OnAudienceInitStateChanged;
+            AudienceSDK.Audience.AudienceInitStateChanged += OnAudienceInitStateChanged;
         }
 
         private void OnDestroy()
         {
-            if (FPSAudience.Instance)
-                FPSAudience.Instance.onAudienceInitStateChanged -= OnAudienceInitStateChanged;
+            AudienceSDK.Audience.AudienceInitStateChanged -= OnAudienceInitStateChanged;
         }
 
         private void InitPanelController() {
