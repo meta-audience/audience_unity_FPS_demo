@@ -29,7 +29,7 @@ namespace AudienceSDK.Sample
             }
         }
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
             if (this._followTarget)
             {
